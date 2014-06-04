@@ -10,7 +10,7 @@ define php_fcgi::config(
 	$template		= '',		
 ) {
 
-	$final_template = template ? {
+	$real_template = $template ? {
 		''	=> "php_fcgi/php_fcgi.erb",
 		default => $template,
 	}
@@ -27,7 +27,7 @@ define php_fcgi::config(
 		mode	 => 0755,
 		owner    => root,
 		group    => root,
-		content  => template($real_template),
+		content  => template("${real_template}"),
 		require  => Package[$php_fcgi::package_name],
 		notify   => Service["php_fcgi_${bind}"]
 	}
