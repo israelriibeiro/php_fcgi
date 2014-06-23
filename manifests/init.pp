@@ -8,8 +8,9 @@
 #   Explanation of what this parameter affects and what it defaults to.
 #
 class php_fcgi (
-      $package_name = $php_fcgi::package_name
+  $package_name = $php_fcgi::package_name
 ) inherits php_fcgi::params {
 
-   	class { 'php_fcgi::install': } 
+  class { 'php_fcgi::install': }
+
 }

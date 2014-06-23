@@ -6,7 +6,7 @@
 class php_fcgi::params {
   case $::osfamily {
     'Debian': {
-      $package_name = ["php5-cgi","php5-cli","spawn-fcgi"]
+      $package_name = ['php5-cgi','php5-cli','spawn-fcgi']
       $service_name = 'php_fcgi'
     }
     'RedHat', 'Amazon': {
